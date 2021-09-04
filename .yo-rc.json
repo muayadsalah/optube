@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.muayadsalah.optube"
+    },
+    "jhipsterVersion": "6.9.1",
+    "applicationType": "monolith",
+    "baseName": "optube",
+    "packageName": "com.muayadsalah.optube",
+    "packageFolder": "com/muayadsalah/optube",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "M2M2ZmM4MzE5YjM5MGQ3YjM3ZWM3Y2FiZjI1MmI1ZThmMGYxYTc5YjIyMzBlZDM2ZTVmNzY0ZWJjOTdlOWMzMzc2ZWI1YzJmZjNmOTE1MmY4ZWFmMjI0NWFjZTdmOTc5OWY3MjI2ZTQ2MTRjYzU2ZGUxMWU5MDJiNDM0OGRhNzc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "creationTimestamp": 1630770860231,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
