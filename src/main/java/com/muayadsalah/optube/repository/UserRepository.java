@@ -2,14 +2,12 @@ package com.muayadsalah.optube.repository;
 
 import com.muayadsalah.optube.domain.User;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Spring Data MongoDB repository for the {@link User} entity.
@@ -17,21 +15,10 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {
 
-    String USERS_BY_LOGIN_CACHE = "usersByLogin";
+    String USERS_BY_USERNAME_CACHE = "usersByUsername";
 
-    String USERS_BY_EMAIL_CACHE = "usersByEmail";
+    @Cacheable(cacheNames = USERS_BY_USERNAME_CACHE)
+    Optional<User> findOneByUsername(String username);
 
-    Optional<User> findOneByActivationKey(String activationKey);
-
-    List<User> findAllByActivatedIsFalseAndActivationKeyIsNotNullAndCreatedDateBefore(Instant dateTime);
-
-    Optional<User> findOneByResetKey(String resetKey);
-
-    @Cacheable(cacheNames = USERS_BY_EMAIL_CACHE)
-    Optional<User> findOneByEmailIgnoreCase(String email);
-
-    @Cacheable(cacheNames = USERS_BY_LOGIN_CACHE)
-    Optional<User> findOneByLogin(String login);
-
-    Page<User> findAllByLoginNot(Pageable pageable, String login);
+    List<User> findAllByIdIn(Set<String> ids);
 }
